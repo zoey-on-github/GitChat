@@ -1,0 +1,10 @@
+
+.idea/discord.xml
+.idea/GitChat.iml
+.idea/vcs.xml
+.idea/modules.xml
+
+
+# Added by cargo
+
+/target
