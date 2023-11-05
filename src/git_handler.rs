@@ -15,13 +15,13 @@ pub(crate) fn send_message(message: &String) -> String {
 
     let command_output = if cfg!(target_os = "windows") {
         Command::new("cmd")
-            .args(["/C", "git add . && git commit -m \"message\" && git push -u main"])
+            .args(["/C", "git add . && git commit -m \"message\" && git push"])
             .output()
             .expect("failed to execute process")
     } else {
         Command::new("sh")
             .arg("-c")
-            .arg("git add . && git commit -m \"message\" && git push -u main")
+            .arg("git add . && git commit -m \"message\" && git push")
             .output()
             .expect("failed to execute process")
     };
