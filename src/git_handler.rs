@@ -41,7 +41,7 @@ pub(crate) fn send_message(message: &String, author: &String) -> String {
         .open("chat.txt")
         .unwrap();
 
-    if let Err(e) = writeln!(file, "{}, {author}", message) {
+    if let Err(e) = writeln!(file, "{}: {author}", message) {
         eprintln!("Couldn't write to file: {}", e);
     }
     /*
