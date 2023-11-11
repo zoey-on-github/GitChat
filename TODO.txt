@@ -1,0 +1,3 @@
+add a GUI way of viewing posts: could do tabbed interface with this: https://crates.io/crates/egui_dock
+replace raw git commands with git2-rs, i will try to keep ths in a seperate branch till it works
+API???????????????????
