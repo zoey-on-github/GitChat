@@ -8,3 +8,4 @@ Arthur
 Arthur
 julie
 test
+julie, author test

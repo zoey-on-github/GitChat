@@ -41,14 +41,14 @@ pub(crate) fn send_message(message: &String, author: &String) -> String {
         .open("chat.txt")
         .unwrap();
 
-    if let Err(e) = writeln!(file, "{}", message) {
+    if let Err(e) = writeln!(file, "{}, {author}", message) {
         eprintln!("Couldn't write to file: {}", e);
     }
-
-    if let Err(e) = writeln!(file, "{}", author) {
-        eprintln!("Couldn't write to file: {}", e);
-    }
-
+    /*
+        if let Err(e) = writeln!(file, "{}", author) {
+            eprintln!("Couldn't write to file: {}", e);
+        }
+    */
     let command_output = if cfg!(target_os = "windows") {
         Command::new("cmd")
             .args(["/C", "git add . && git commit -m \"message\" && git push"])
