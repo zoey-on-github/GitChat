@@ -16,7 +16,7 @@ fn main() -> Result<(), eframe::Error> {
     let mut name = "Arthur".to_owned();
     let mut command_text = "h".to_owned();
     let mut age = 42;
-    let mut author = "james";
+    let mut author = "james".to_owned();
     eframe::run_simple_native("Git Chat", options, move |ctx, _frame| {
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.heading("git chat");
