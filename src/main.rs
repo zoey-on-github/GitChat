@@ -14,9 +14,9 @@ fn main() -> Result<(), eframe::Error> {
 
     // Our application state:
     let mut name = "Arthur".to_owned();
-    let mut command_text= "h".to_owned();
+    let mut command_text = "h".to_owned();
     let mut age = 42;
-
+    let mut author = "james";
     eframe::run_simple_native("Git Chat", options, move |ctx, _frame| {
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.heading("git chat");
@@ -32,6 +32,11 @@ fn main() -> Result<(), eframe::Error> {
                     .labelled_by(command_label.id);
             });
 
+            ui.horizontal(|ui| {
+                let author_label = ui.label("author:");
+                ui.text_edit_singleline(&mut author)
+                    .labelled_by(author_label.id)
+            });
             if ui.button("Send Message").clicked() {
                 command_text = git_handler::send_message(&name);
             }
