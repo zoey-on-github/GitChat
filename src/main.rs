@@ -38,7 +38,7 @@ fn main() -> Result<(), eframe::Error> {
                     .labelled_by(author_label.id)
             });
             if ui.button("Send Message").clicked() {
-                command_text = git_handler::send_message(&name);
+                command_text = git_handler::send_message(&author, &name);
             }
         });
     })
